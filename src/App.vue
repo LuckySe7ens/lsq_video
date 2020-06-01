@@ -5,6 +5,11 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
+    <div id="toolbar" >
+      <router-link to="/movie">影院</router-link> |
+      <router-link to="/mine">我的</router-link>  |
+      <router-link to="/cinema">热播</router-link>
+    </div>
   </div>
 </template>
 
