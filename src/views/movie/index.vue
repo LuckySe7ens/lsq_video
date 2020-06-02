@@ -4,15 +4,15 @@
             <vue-aliplayer-v2 :source="source" ref="VueAliplayerV2" :options="options" />
         </template>
         <p class="remove-text" v-else>播放器已销毁!</p>
-<!--        <div class="player-btns">-->
-<!--            <span @click="play()">播放</span>-->
-<!--            <span @click="pause()">暂停</span>-->
-<!--            <span @click="replay()">重播</span>-->
+        <div class="player-btns">
+            <span @click="play()">播放</span>
+            <span @click="pause()">暂停</span>
+            <span @click="replay()">重播</span>
 <!--            <span @click="getCurrentTime()">播放时刻</span>-->
-<!--            <span @click="show = !show">{{ show ? '销毁' : '重载' }}</span>-->
-<!--            <span @click="options.isLive = !options.isLive">{{ options.isLive ? '切换普通模式' : '切换直播模式' }}</span>-->
+            <span @click="show = !show">{{ show ? '销毁' : '重载' }}</span>
+            <span @click="options.isLive = !options.isLive">{{ options.isLive ? '切换普通模式' : '切换直播模式' }}</span>
 <!--            <span @click="getStatus()">获取播放器状态</span>-->
-<!--        </div>-->
+        </div>
         <div class="source-box">
 <!--            <span class="source-label">选择播放源(支持动态切换):</span>-->
             <select v-model="source" name="source" id="source">
@@ -37,7 +37,8 @@
         data() {
             return {
                 options: {
-                    source:'//player.alicdn.com/video/aliyunmedia.mp4'
+                    source:'//player.alicdn.com/video/aliyunmedia.mp4',
+                    isLive: false
                 },
                 source: '//player.alicdn.com/video/aliyunmedia.mp4',
                 show: true
@@ -89,20 +90,20 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        span {
+        span,select {
             margin: 0 auto;
             display: inline-block;
-            padding: 5px 10px;
-            width: 150px;
-            height: 40px;
-            line-height: 40px;
+            padding: 2px 5px;
+            /*width: 150px;*/
+            /*height: 40px;*/
+            line-height: 20px;
             border: 1px solid #eee;
             background: #e1e1e1;
             border-radius: 10px;
             text-align: center;
             margin: 5px;
             cursor: pointer;
-        }
+        };
     }
     .source-box{
         padding: 5px 10px;
