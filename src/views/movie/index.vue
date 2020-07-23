@@ -50,7 +50,14 @@
                 return this.$refs.videoPlayer.player
             }
         },
+        created() {
+            this.getRouteData()
+        },
         methods:{
+            getRouteData(){
+                this.source = this.$route.query.url
+                console.log("url:"+ this.source)
+            },
             play(){
                 this.$refs.VueAliplayerV2.play()
             },

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import cinema from '../views/cinema'
 import mine from '../views/mine'
 import movie from '../views/movie'
+import lists from '../views/lists'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,16 @@ Vue.use(VueRouter)
       name: 'movie',
       component: () => import('../views/movie')
     },
+    {
+      path: '/lists',
+      name : 'lists',
+      component: () => import('../views/lists')
+    },
+    {
+      path: '/heads',
+      name : 'heads',
+      component: () => import('../views/heads')
+    }
 ]
 
 const router = new VueRouter({

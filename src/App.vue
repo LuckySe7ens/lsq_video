@@ -2,16 +2,19 @@
   <div id="app">
     <el-container>
     <el-header>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
+    <div id="head">
+      <router-link to="/lists">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     </el-header>
-    <el-main>
-      <div style="height: 500px">
-    <router-view/>
-      </div>
-    </el-main>
+    <el-container>
+      <!--<el-aside>
+        <component :is="navigate"></component>
+      </el-aside>-->
+      <el-main>
+      <router-view/>
+      </el-main>
+    </el-container>
     <el-footer>
     <div id="toolbar" >
       <el-row >
@@ -25,6 +28,19 @@
   </div>
 </template>
 
+<script>
+  import heads from './views/heads'
+  import navigate from './views/navigate'
+  export default {
+    components: {heads,navigate},
+    data() {
+      return {
+        heads: 'heads',
+        navigate: 'navigate'
+      }
+    }
+  }
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
